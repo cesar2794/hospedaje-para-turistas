@@ -1,0 +1,352 @@
+:root{
+    --fuenteprincipal: 'Lato', sans-serif;
+    --primario: #da595e;
+    --oscuro: #484848;
+    --claro: #ffffff;
+
+    --hospedaje: #275154;
+    --concierto: #da595e;
+    --clase: #598dda;
+    --paseo:  #39a836;
+}
+
+html{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fuenteprincipal);
+}
+h1{
+    font-size: 2rem;
+    font-weight: 400;
+}
+h2{
+    font-size: 1.8rem;
+}
+h3{
+    font-size: 1.6rem;
+}
+
+
+/* Colores */
+.hospedaje{
+    color: var(--hospedaje);
+}
+.concierto{
+    color: var(--concierto);
+}
+.clase{
+    color: var(--clase);
+}
+.paseo{
+    color: var(--paseo);
+}
+
+
+/* Interfaz */
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.contenedor .logo{
+    margin-left: 5px
+}
+.hero{
+    background-image: url(../img/arriba.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-self: flex-start;
+    align-items: center;
+    padding-top: 1rem;
+}
+.navegacion a{
+    color: var(--claro);
+    text-decoration: none;
+    margin-right: 1rem;
+    transition: all .3s ease;
+}
+.navegacion a:last-of-type{
+    margin-right: 5px;
+}
+.navegacion a:hover{
+    color: #051915;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.navegacion .sesion{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: .5rem;
+}
+.navegacion .sesion:hover{
+    border-color: #051915;
+}
+
+.contenido-hero{
+    display: grid;
+    grid-template-columns: 5% auto 5%;
+    grid-template-rows: max-content auto;
+}
+.contenido-hero h1{
+    grid-column: 2 / 3;
+    color: var(--claro);
+}
+.contenido-hero form{
+    margin-top: 2rem;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    position: relative;
+    display: flex;
+    height: 3.5rem;
+}
+
+form input[type="text"]{
+    flex: 1;
+    border: none;
+    border-radius: 10px;
+    background-image: url(../img/lupa.png);
+    background-repeat: no-repeat;
+    background-position: calc(.5% + .5rem) calc(1% + .5rem);
+    padding-left: 4rem;
+    font-size: 1.2rem;
+}
+form input[type="submit"]{
+    position: absolute;
+    right: 1rem;
+    top: .4rem;
+    padding: .7rem 1rem;
+    border: none;
+    background-color: var(--primario);
+    color: var(--claro);
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+form input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.boton{
+    background-color: var(--claro);
+    display: block;
+    padding: 1rem;
+    color: var(--oscuro);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    -webkit-box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    transition: all .3s ease-in-out;
+}
+.boton:hover{
+    background-color: var(--primario);
+    color: var(--claro);
+}
+
+.btn-flotante{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--claro);
+    color: var(--oscuro);
+    padding: .8rem 1.8rem;
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    box-shadow: 0px 13px 19px -8px rgba(0,0,0,0.4);
+    transition: all .3s ease;
+}
+
+.btn-flotante.activo,
+.btn-flotante:hover{
+    background-color: var(--primario);
+    color: var(--claro);
+}
+
+/* Contenido Principal */
+.contenedor-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.card img{
+    width: 100%;
+}
+
+.info .categoria{
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.info .titulo{
+    font-size: 1.3rem;
+    font-weight: 900;
+    margin: 0;
+}
+.info .precio{
+    color: var(--oscuro);
+    font-size: .9rem;
+}
+
+
+/* Premium */
+.premium{
+    background-image: url(../img/hospedaje-pro.jpg);
+    background-repeat: no-repeat;
+    grid-template-columns: unset;
+    height: 30rem;
+}
+@media(min-width: 768px){
+    .premium{
+        grid-template-columns: auto 35%;
+    }
+    .premium .info{
+        grid-column: 2 / 3;
+    }
+}
+
+.premium .info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+.premium .info h3{
+    text-align: center;
+    font-size: 1.9rem;
+    color: var(--claro);
+}
+@media(min-width: 768px){
+    .premium .info h3{
+        text-align: right;
+        color: #000;
+    }
+}
+
+
+/* Destinos populares */
+.destinos .contenedor-cards{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.destinos .card{
+    position: relative;
+}
+.destinos .info{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+.destinos .info .titulo{
+    font-size: 1.4rem;
+    color: var(--claro);
+}
+
+
+/* FOOTER */
+.footer{
+    position: fixed;
+    bottom: -100%;
+    background-color: var(--claro);
+    width: 100%;
+    -webkit-box-shadow: 0px -13px 24px -10px rgba(0,0,0,0.32);
+    -moz-box-shadow: 0px -13px 24px -10px rgba(0,0,0,0.32);
+    box-shadow: 0px -13px 24px -10px rgba(0,0,0,0.32);
+    transition: all .5s ease-in;
+    padding: 1rem 1.5rem 2.8rem 0;
+    text-align: center;
+}
+@media(min-width: 768px){
+    .footer{
+        text-align: left;
+    }
+}
+.footer.activo{
+    bottom: 0;
+}
+
+.nav-footer{
+    padding: 1rem;
+}
+
+.nav-footer h3{
+    font-size: 1.1rem;
+}
+
+.nav-footer a{
+    display: block;
+    margin-bottom: .5rem;
+    text-decoration: none;
+    color: var(--oscuro);
+}
+.nav-footer a:last-of-type{
+    margin: 0;
+}
+
+
+/** Redes Socialaes**/
+.sociales ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+    flex: 1 0 auto;
+    list-style: none;
+}
+@media(min-width: 480px){
+    .sociales ul{
+        justify-content: flex-end;
+    }
+}
+.sociales ul li{
+    margin-left: 1rem;
+}
+.sociales ul li:first-of-type{
+    margin: 0;
+}
+.sociales ul li a{
+    text-decoration: none;
+}
+
+.sociales ul li a:before{
+    font-family: "Font Awesome 5 Brands";
+    color: var(--oscuro);
+    font-size: 1.7rem;
+}
+
+.sociales ul li a[href*='facebook.com']::before{
+    content: "\f39e";
+}
+.sociales ul li a[href*='twitter.com']::before{
+    content: "\f099";
+}
+.sociales ul li a[href*='youtube.com']::before{
+    content: "\f431";
+}
+.sociales ul li a[href*='instagram.com']::before{
+    content: "\f16d";
+}
+.sociales ul li a[href*='pinterest.com']::before{
+    content: "\f231";
+}
+
+.sociales ul li span{
+    display: none;
+}
